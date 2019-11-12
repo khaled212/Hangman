@@ -1,55 +1,10 @@
 
-@mixin transition {
-  webkit-transition: all 0.5s ease-in-out;
-  moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-@mixin clear {
-  :after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-}
-
- @mixin box-size {
-  webkit-box-sizing: border-box;
-  moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
- @mixin transition {
-  webkit-transition: all 0.3s ease-in-out;
-  moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-@mixin fade {
-  moz-transition: all 1s ease-in;
-  moz-transition:all 0.3s ease-in-out;
-  webkit-transition:all 0.3s ease-in-out;
-}
-
-@mixin opacity {
-  opacity:0.4;
-  filter: alpha opacity=(40); 
-  @include: fade;
-}
-
-@mixin corners ($radius) {
-  moz-border-radius: $radius;
-  webkit-border-radius: $radius;
-  border-radius: $radius; 
-  khtml-border-radius: $radius; 
-}
-
 body {
   background-image: url("Hangman.png"); 
-  background-position: center;
-  background-repeat: no-repeat;
+  background-position: center ;
+  background-repeat: no-repeat ;
   background-size: cover; 
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica, Arial", "Lucida Grande", "sans-serif"; 
   color:firebrick;
   height:100%;
   text-align:center;
@@ -58,28 +13,28 @@ body {
 
 
 .wrappper{
-  @include clear;
   width:100%;
   margin:0 auto;
+  
 }
 
 
 canvas{
     color: white;
-    border: rgb(126, 2, 2) dashed 5px;
+    border: red dashed 5px;
     padding:15px;
 }
 
 h1, h2, h3 {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', "sans-serif";
 	font-weight: 100;
 	text-transform: uppercase;
-    margin:5px 0;
+  margin:5px 0;
 }
 
 h1 {
     font-size: 2.6em;
-    color: firebrick;
+    color: rgb(255, 0, 0);
     font-size: 2.9em;
     
 }
@@ -87,15 +42,13 @@ h1 {
 p{
     font-size:1.8em;
     text-align:center;
-    color: firebrick;
+    color:rgb(255, 0, 0);
 }
 
 #alphabet {
-  @include clear;
   margin:15px auto;
   padding:0;
   max-width:900px;
-  color:;
   font-size: 1.4em;
 }
 
@@ -106,18 +59,10 @@ p{
   width:35px;
   height:30px;
   padding-top:10px;
-  background:;
-  color: base-color;
   cursor: pointer;
-  @include: corners(5px);
-  border: solid 2px firebrick;
+  border: solid 2px rgb(6, 6, 6);
   font-weight: bold;
-  
-    &:hover{
-      background: base-color;
-      border: solid 1px white;
-      color: white;
-    }
+  background-color: white;
 }
 
 #my-word {
@@ -125,9 +70,10 @@ p{
   display: block;
   padding: 0;
   display:block;
-  color:firebrick;
+  color: red ;
   font-size: 20px;
   font-weight: bolder;
+ 
 }
 
 #my-word li {
@@ -141,27 +87,22 @@ p{
 }
 
 .active {
-  @include opacity;
   cursor:default;
   text-align:center;
-    
-  &:hover{
-      @include fade;
-      @include opacity;
-    }
 }
 
 #mylives{
-  font-size:1.6em;
+  font-size:2.0em;
   text-align:center;
   display:block;
+  font-weight: bold;
+  color:green;
 }
 
 button{
-  @include corners (5px);
   background: base-color;
-  color: white;
-  border: solid 1px white;
+  color: black;
+  border: solid 4px black;
   text-decoration:none;
   cursor: pointer;
   font-size:1.2em;
@@ -169,21 +110,13 @@ button{
   width:180px;
   margin: 10px;
   outline: none;
-  
-  
-    &:hover{
-      @include transition;
-      background: white;
-      border: solid 4px white;
-      color:base-color;
-    }
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   #alphabet {
   padding:0 0 0 15px;
 }
-  }
+  } */
 
   @media (max-width: 480px) {
   #alphabet {
